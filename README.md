@@ -89,9 +89,15 @@ z = [R_bistatic, V_bistatic, Azimuth, Elevation]
 
 ### Measurement Noise
 
-- Range: ±15 m  
-- Velocity: ±2.13 m/s  
-- Angles: ±1.5°  
+- Bistatic Range: ±15 m  
+- Bistatic Velocity: ±2.13 m/s  
+- Angles: ±1.5°
+
+**Note:**  
+The noise levels are approximated using the **Range-Doppler resolution cell size**.  
+In practice, estimation accuracy depends on SNR:
+- High SNR → sub-bin interpolation improves accuracy  
+- Low SNR → accuracy degrades beyond resolution
 
 ---
 
