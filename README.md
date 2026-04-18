@@ -20,42 +20,45 @@ The project includes bistatic range-Doppler processing and 3D target tracking us
 
 ## 🧱 Project Structure
 
-├── init_scenario.m
-│ → Scenario generation (satellite, target, receiver in ECEF)
+```
+project/
 │
-├── visu_scenario_2D.m
-│ → 2D visualization of the scenario (trajectories on Earth)
+├── init_scenario.m  
+│   → Scenario generation (satellite, target, receiver in ECEF)
 │
-├── config_radar_system_isotrope.m
-│ → Radar configuration (waveform, antenna, system parameters)
+├── visu_scenario_2D.m  
+│   → 2D visualization of the scenario (trajectories on Earth)
 │
-├── carte_rangedoppler.m
-│ → Main signal processing script:
-│ generation of radar signals + Range-Doppler map computation
+├── config_radar_system_isotrope.m  
+│   → Radar configuration (waveform, antenna, system parameters)
 │
-├── ref_bist.m
-│ → Bistatic reference calculations:
-│ bistatic range and velocity from geometry
+├── carte_rangedoppler.m  
+│   → Main signal processing script:
+│     generation of radar signals + Range-Doppler map computation
 │
-├── filtre_Kalman.m
-│ → Extended Kalman Filter core:
-│ state estimation (position & velocity in ECEF)
+├── ref_bist.m  
+│   → Bistatic reference calculations:
+│     bistatic range and velocity from geometry
 │
-├── h_et_H.m
-│ → Measurement model:
-│ - h(x): nonlinear measurement function
-│ - H(x): associated Jacobian
+├── filtre_Kalman.m  
+│   → Extended Kalman Filter core:
+│     state estimation (position & velocity in ECEF)
 │
-├── Affichage_Erreurs_filtre_Kalman.m
-│ → Plot of estimation errors (position & velocity)
+├── h_et_H.m  
+│   → Measurement model:
+│     - h(x): nonlinear measurement function
+│     - H(x): associated Jacobian
 │
-├── Affichage_Positions_Kalman_vs_Reelles.m
-│ → 3D visualization:
-│ comparison between true trajectory and EKF estimation
+├── Affichage_Erreurs_filtre_Kalman.m  
+│   → Plot of estimation errors (position & velocity)
 │
-├── README.md
-│ → Project documentation
----
+├── Affichage_Positions_Kalman_vs_Reelles.m  
+│   → 3D visualization:
+│     comparison between true trajectory and EKF estimation
+│
+└── README.md  
+    → Project documentation
+```
 
 ## 4. Signal Processing – Range-Doppler
 
@@ -80,7 +83,7 @@ x = [X, Y, Z, Vx, Vy, Vz]
 
 Measurements:
 
-z = [R_bistatic, Doppler, Azimuth, Elevation]
+z = [R_bistatic, V_bistatic, Azimuth, Elevation]
 
 ---
 
